@@ -35,6 +35,8 @@ Alternatively we can start from inner layer and work outwards
 c) Time complexity - O(N^2)
  */
 
+import com.dsa.utils.Utils;
+
 /*
 Solution 2
  */
@@ -44,20 +46,9 @@ public class MatrixRotation {
         MatrixRotation obj = new MatrixRotation();
         int[][] image = {{1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
         System.out.println("Input Image : ");
-        obj.printImage(image);
+        Utils.printMatrix(image);
         System.out.println("Output Image : ");
-        obj.printImage(obj.rotateImage(image));
-    }
-
-    void printImage(int[][] image) {
-        for (int i = 0; i < image.length; i++) {
-            for (int j = 0; j < image[i].length; j++) {
-                System.out.print(image[i][j]);
-                System.out.print(" ");
-            }
-            System.out.println();
-        }
-
+        Utils.printMatrix(obj.rotateImage(image));
     }
 
     int[][] rotateImage(int[][] image) {
