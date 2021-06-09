@@ -64,8 +64,6 @@ public class PalindromeUsingRecursionApproach {
         result.node = result.node.getNext();
         return result;
     }
-
-
 }
 
 class Result {
