@@ -29,20 +29,31 @@ public class DeleteMiddleNode {
         linkedList.appendData(6);
         System.out.println("Input Linked List : " + linkedList.toString());
         System.out.println("Output Linked List : " + obj.deleteMiddleNode(linkedList).toString());
+
+        LinkedList linkedList2 = new LinkedList();
+        linkedList2.appendData(1);
+        linkedList2.appendData(5);
+        linkedList2.appendData(3);
+        linkedList2.appendData(2);
+        linkedList2.appendData(6);
+        linkedList2.appendData(9);
+        System.out.println("Input Linked List : " + linkedList2.toString());
+        System.out.println("Output Linked List : " + obj.deleteMiddleNode(linkedList2).toString());
+
     }
 
     private LinkedList deleteMiddleNode(LinkedList linkedList) {
         Node head = linkedList.getHead();
 
-        Node pointer1 = head;
-        Node pointer2 = head;
+        Node slowRunner = head;
+        Node fastRunner = head;
         Node previous = null;
-        while (pointer2.getNext() != null && pointer2.getNext().getNext() != null) {
-            pointer2 = pointer2.getNext().getNext();
-            previous = pointer1;
-            pointer1 = pointer1.getNext();
+        while (fastRunner!= null && fastRunner.getNext() != null) {
+            fastRunner = fastRunner.getNext().getNext();
+            previous = slowRunner;
+            slowRunner = slowRunner.getNext();
         }
-        previous.setNext(pointer1.getNext());
+        previous.setNext(slowRunner.getNext());
         return linkedList.setHead(head);
     }
 }

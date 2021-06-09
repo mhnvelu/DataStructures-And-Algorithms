@@ -45,6 +45,16 @@ public class LinkedList {
         return this;
     }
 
+    int size() {
+        Node node = head;
+        int size = 0;
+        while (node != null) {
+            size++;
+            node = node.getNext();
+        }
+        return size;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
