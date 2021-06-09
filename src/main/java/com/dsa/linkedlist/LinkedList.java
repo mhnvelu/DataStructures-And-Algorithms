@@ -36,11 +36,24 @@ public class LinkedList {
         return this;
     }
 
+    public LinkedList appendData(Node node) {
+        if (head == null) {
+            head = node;
+            return this;
+        }
+        Node current = head;
+        while (current.getNext() != null) {
+            current = current.getNext();
+        }
+        current.setNext(node);
+        return this;
+    }
+
     public Node getHead() {
         return head;
     }
 
-    public LinkedList setHead(Node head){
+    public LinkedList setHead(Node head) {
         this.head = head;
         return this;
     }
