@@ -21,7 +21,7 @@ Output: 4
 
 /*
 Solution:
-a) Create a class NodeWithMin which can hold value and min-value for each push operations.
+a) Create a wrapper class NodeWithMin which can hold value and min-value for each push operations.
 b) min() can peek() the stack and return min value.
 c) This uses extra space to hold min value for each push operations.
 d) Create the stack as int types.
