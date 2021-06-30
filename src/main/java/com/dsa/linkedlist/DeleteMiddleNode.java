@@ -13,7 +13,7 @@ Output : 1->2->4->5->6
 a) Use 2 pointers - Pointer1 and Pointer2
 b) For each iteration, move Pointer1 by one position and Pointer2 by two position.
 c) Track the previous node of Pointer1 while traversal.
-d) When Pointer2 reaches end of the list, remove Node at Pointer1
+d) When Pointer2 reaches end of the list, remove Vertex at Pointer1
 e) It takes O(n) time and O(1) space.
  */
 public class DeleteMiddleNode {

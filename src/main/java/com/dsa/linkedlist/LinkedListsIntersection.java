@@ -13,12 +13,12 @@ Input:
       4->6->
 
 Output:
-Intersecting Node is 7
+Intersecting Vertex is 7
 
 
 Input 1 LinkedList : 3->1->5->9->7->2->1
 Input 2 LinkedList : 4->6->7->2->1
-Intersecting Node is : 7
+Intersecting Vertex is : 7
 
  */
 
@@ -60,7 +60,7 @@ public class LinkedListsIntersection {
 
         System.out.println("Input 1 LinkedList : " + input_1.toString());
         System.out.println("Input 2 LinkedList : " + input_2.toString());
-        System.out.println("Intersecting Node is : " + obj.intersectingNode(input_1, input_2).getData());
+        System.out.println("Intersecting Vertex is : " + obj.intersectingNode(input_1, input_2).getData());
 
     }
 

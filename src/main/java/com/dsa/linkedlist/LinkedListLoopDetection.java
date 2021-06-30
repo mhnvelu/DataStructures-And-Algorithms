@@ -38,7 +38,7 @@ public class LinkedListLoopDetection {
         input.appendData(node_3);
 
         System.out.println("Input Linked List : " + "1->2->3->4->5->3[SAME 3 AS EARLIER]");
-        System.out.println("Node at Beginning of Loop : " + obj.findBeginningOfLoop(input.getHead()).getData());
+        System.out.println("Vertex at Beginning of Loop : " + obj.findBeginningOfLoop(input.getHead()).getData());
 
     }
 
