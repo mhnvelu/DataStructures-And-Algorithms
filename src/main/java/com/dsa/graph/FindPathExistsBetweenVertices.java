@@ -12,6 +12,9 @@ Problem Description: Find if a path exists between given vertices in a directed 
 /*
 Solution:
 Use BFS
+
+Path exists between 1 and 5: true
+Path exists between 3 and 5: false
  */
 
 public class FindPathExistsBetweenVertices {
@@ -34,11 +37,12 @@ public class FindPathExistsBetweenVertices {
 
         graph.printGraph();
 
-        int vertex_1 = 1;
+        int vertex_1 = 3;
         int vertex_2 = 5;
         boolean result = obj.isPathExistBetweenVertices(graph, vertex_1, vertex_2);
         System.out.println("Path exists between " + vertex_1 + " and " + vertex_2 + ": " + result);
     }
+
 
     boolean isPathExistBetweenVertices(Graph graph, int vertex_1, int vertex_2) {
         Vertex node_1 = new Vertex(vertex_1);
@@ -56,7 +60,9 @@ public class FindPathExistsBetweenVertices {
                 if (node_2.getValue() == adjacent.getValue()) {
                     return true;
                 } else {
-                    queue.add(adjacent);
+                    if (!visited.contains(adjacent)) {
+                        queue.add(adjacent);
+                    }
                 }
             }
             visited.add(vertex);
