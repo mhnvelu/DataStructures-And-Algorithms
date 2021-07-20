@@ -1,4 +1,13 @@
 package com.dsa.tree;
+/*
+Problem: Check if a binary tree is BST
+ */
+
+/*
+Solution:
+Inorder traversal on Binary Tree may result in sorted values if it is BST
+O(n) time complexity
+ */
 
 public class TreeIsBST {
     Integer lastValue = null;
