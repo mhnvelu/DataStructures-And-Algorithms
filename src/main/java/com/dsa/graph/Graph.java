@@ -1,13 +1,14 @@
 package com.dsa.graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class Graph {
+public class Graph<T> {
 
-    private Map<Vertex, List<Vertex>> adjacentVertices = new HashMap<>();
+    private Map<Vertex<T>, List<Vertex<T>>> adjacentVertices = new HashMap<>();
+
+    public Graph() {
+
+    }
 
     public static void main(String a[]) {
         Graph graph = new Graph();
@@ -29,19 +30,19 @@ public class Graph {
 
     }
 
-    void addEdge(int value_1, int value_2) {
-        Vertex v1 = new Vertex(value_1);
-        Vertex v2 = new Vertex(value_2);
+    void addEdge(T value_1, T value_2) {
+        Vertex v1 = new Vertex<T>(value_1);
+        Vertex v2 = new Vertex<T>(value_2);
         adjacentVertices.get(v1).add(v2);
     }
 
-    void addVertex(int value) {
-        adjacentVertices.put(new Vertex(value), new ArrayList<Vertex>());
+    void addVertex(T value) {
+        adjacentVertices.put(new Vertex<T>(value), new ArrayList<Vertex<T>>());
     }
 
 
     public void printGraph() {
-        for (Map.Entry<Vertex, List<Vertex>> vertex : adjacentVertices.entrySet()) {
+        for (Map.Entry<Vertex<T>, List<Vertex<T>>> vertex : adjacentVertices.entrySet()) {
             System.out.println("Adjacency List of " + vertex.getKey().getValue() + " : ");
             StringBuilder builder = new StringBuilder();
             for (Vertex adjacent : vertex.getValue()) {
@@ -52,12 +53,16 @@ public class Graph {
         }
     }
 
-    List<Vertex> getAdjacentVertices(int value) {
-        return adjacentVertices.get(new Vertex(value));
+    List<Vertex<T>> getAdjacentVertices(T value) {
+        return adjacentVertices.get(new Vertex<T>(value));
     }
 
-    public Map<Vertex, List<Vertex>> getAdjacentVertices() {
+    public Map<Vertex<T>, List<Vertex<T>>> getAdjacentVertices() {
         return adjacentVertices;
+    }
+
+    public Set<Vertex<T>> getVertices() {
+        return adjacentVertices.keySet();
     }
 
 }

@@ -3,6 +3,7 @@ package com.dsa.graph;
 import com.dsa.queue.MyQueue;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /*
@@ -37,7 +38,7 @@ public class FindPathExistsBetweenVertices {
 
         graph.printGraph();
 
-        int vertex_1 = 3;
+        int vertex_1 = 1;
         int vertex_2 = 5;
         boolean result = obj.isPathExistBetweenVertices(graph, vertex_1, vertex_2);
         System.out.println("Path exists between " + vertex_1 + " and " + vertex_2 + ": " + result);
@@ -56,7 +57,8 @@ public class FindPathExistsBetweenVertices {
 
         while (!queue.isEmpty()) {
             Vertex vertex = queue.remove();
-            for (Vertex adjacent : graph.getAdjacentVertices(vertex.getValue())) {
+            List<Vertex> adjacentVertices = graph.getAdjacentVertices(vertex.getValue());
+            for (Vertex adjacent : adjacentVertices) {
                 if (node_2.getValue() == adjacent.getValue()) {
                     return true;
                 } else {

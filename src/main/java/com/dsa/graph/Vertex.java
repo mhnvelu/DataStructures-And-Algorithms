@@ -1,14 +1,14 @@
 package com.dsa.graph;
 
-public class Vertex {
+public class Vertex<T> {
 
-    private int value;
+    private T value;
 
-    public Vertex(int value) {
+    public Vertex(T value) {
         this.value = value;
     }
 
-    public int getValue() {
+    public T getValue() {
         return value;
     }
 
@@ -21,13 +21,18 @@ public class Vertex {
             return false;
         }
 
-        Vertex vertex = (Vertex) o;
+        Vertex<?> vertex = (Vertex<?>) o;
 
-        return value == vertex.value;
+        return value != null ? value.equals(vertex.value) : vertex.value == null;
     }
 
     @Override
     public int hashCode() {
-        return value;
+        return value != null ? value.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
     }
 }
