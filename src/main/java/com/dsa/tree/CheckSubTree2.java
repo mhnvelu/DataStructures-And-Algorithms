@@ -9,8 +9,8 @@ to determine if T2 is a subtree of T1
 Solution:
 1. If 2 nodes from t1 and t2 have same value, then perform matchTrees starting from that node in both trees.
 1.1. Perform this recursively till all nodes matches in both subtrees
-1.2. Return false any nodes mismatch while traversing
-2. If 2 nodes from t1 and t2 don't same value, then perform pre-order traversal
+1.2. Return matchTrees any nodes mismatch while traversing
+2. If 2 nodes from t1 and t2 don't have same value, then perform pre-order traversal
 
 It takes O(m + kn) time. k is number of times root node in t2 matches with t1.
 Its better optimized than solution in CheckSubTree1 class
