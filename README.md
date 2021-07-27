@@ -53,3 +53,7 @@ level and this level has the maximum number of nodes.
 - In recursive algorithms, we should make sure that base cases as well as null cases are well 
 handled
 - Inorder traversal on Binary Tree may result in sorted values if it is BST
+
+
+## Arrays
+- An element in a sorted array can be found in O(log n) time via binary search
